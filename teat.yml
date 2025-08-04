@@ -1,0 +1,48 @@
+# this is basci version of generator.yml fle
+modules:
+  netapp_eseries:
+    walk:
+      - ssStorageArrayName
+      - ssStorageArrayWWID
+      - ssChassisSerialNumber
+      - ssVendorID
+      - ssProductID
+      - ssModelName
+      - ssStorageArrayNeedsAttention
+      - ssEventType
+      - ssEventTime
+      - ssEventDescription
+    version: 2
+    auth:
+      community: public
+    overrides:
+      ssStorageArrayName:
+        type: DisplayString
+        help: "Storage array name for the reporting device."
+      ssStorageArrayWWID:
+        type: DisplayString
+        help: "World wide identifier (WWID) for the reporting device."
+      ssChassisSerialNumber:
+        type: DisplayString
+        help: "Storage Array Chassis Serial Number for the reporting device."
+      ssVendorID:
+        type: DisplayString
+        help: "Vendor identifier of the reporting device."
+      ssProductID:
+        type: DisplayString
+        help: "Product identifier for the reporting device."
+      ssModelName:
+        type: DisplayString
+        help: "Vendor defined model name for the reporting device."
+      ssStorageArrayNeedsAttention:
+        type: Gauge
+        help: "Summary of the operational status of the reporting device. (0 - Optimal, 1 - Needs Attention)"
+      ssEventType:
+        type: DisplayString
+        help: "Enumerated value corresponding to the error detected by the reporting device."
+      ssEventTime:
+        type: DisplayString
+        help: "The time at which the error event occurred on the reporting device."
+      ssEventDescription:
+        type: DisplayString
+        help: "String describing the nature of the error that occurred on the reporting device."
